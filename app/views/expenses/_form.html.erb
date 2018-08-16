@@ -5,9 +5,8 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title"><%= title %></h4>
       </div>
-      <%= form_for @expense, remote: true do |f| %>
         <div class="modal-body">
-
+          <%= form_for @expense, remote: true do |f| %>
           <div class="form-row">
             <div class="form-group col-md-6">
               <%= f.label :type %>
@@ -34,13 +33,10 @@
               <%= f.text_field :amount, class: "form-control" %>
             </div>
           </div>
-        </div>
-
-        <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           <%= f.submit class: "btn btn-primary" %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
