@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
   before_action :fetch_expense, only: [:update, :edit, :destroy, :show]
   def index
+    @expenses = Expense.all
     @categories = Expense.categories
     @transaction_types = Expense.transaction_types
     @tab = :expenses
