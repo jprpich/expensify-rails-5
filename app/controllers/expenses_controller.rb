@@ -20,12 +20,7 @@ class ExpensesController < ApplicationController
   end
 
   def update
-    if @expense.update(expense_params)
-      flash[:success] = "Expense was updated correctly"
-      redirect_to @expense
-    else
-      render :edit
-    end
+    @expense = Expense.update(params[:id], expense_params)
   end
 
   def destroy

@@ -1,4 +1,4 @@
-<tr>
+<tr id="<%= expense.id %>">
   <td class="date">
     <div class="day"><%= expense.date.strftime("%d") %></div>
     <div class="month"><%= expense.date.strftime("%b") %></div>
@@ -15,7 +15,8 @@
   <td class="text-right" style="width: 170px;">
     <div class="amount"><%= expense.amount %></div>
     <div class="actions">
-      <%= link_to '<span class="glyphicon glyphicon-trash">Eliminar</span>'.html_safe, { action: :destroy, id: expense.id }, method: :delete, data: { confirm: 'Estás seguro?' }%>
+      <%= link_to '<span class="glyphicon glyphicon-edit"></span> Edit'.html_safe, edit_expense_path(expense), remote: true %>
+      <%= link_to '<span class="glyphicon glyphicon-trash"></span> Eliminar'.html_safe, { action: :destroy, id: expense.id }, method: :delete, data: { confirm: 'Estás seguro?' }%>
     </div>
   </td>
 </tr>
